@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block display %}
+<h2>Check Details</h2>
+<form action="/check_bio" method="POST">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

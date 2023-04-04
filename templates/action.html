@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block display %}
+                {% if msg %}
+                  <div class="alert alert-success alert-dismissible" style="width: 95%; font-size:16px;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      {{ msg }}
+                {%endif%}
+                {% if diaries %}
+                  <div class="alert alert-success alert-dismissible" style="width: 95%; font-size:16px;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <h2>Records found:</h2>
+                    {% for diary in diaries %}
+                      {{ diary }}<br/>
+                      {% endfor %}
+                {%endif%}
+            <div>
+                <a href ="{{url_for('index')}}" class="btn btn-primary btn-sm ">&lt;&lt;Back</a>
+            </div>
+{% endblock %}

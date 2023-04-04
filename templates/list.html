@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block display %}
+                {% if users %}
+                  <div class="alert alert-{{message}} alert-dismissible" style="width: 95%; font-size:16px;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>
+                      {{ user.username }}
+                    </td>
+                    <td>
+                        {{ user.id }}
+                      </td>
+                      <td>
+                        {{ user.email }}
+                      </td>
+                </tr>
+                      {% endfor %}
+                        </tbody>
+                    </table>
+                {%endif%}
+            <div>
+                <a href ="{{url_for('index')}}" class="btn btn-primary btn-sm">&lt;&lt;Back</a>
+            </div>
+{% endblock %}
